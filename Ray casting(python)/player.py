@@ -75,8 +75,8 @@ class Plaer():
             if self.depth_h < self.depth_v:
                 self.depth = (self.depth_h)  * cos(self.angle - self.cur_angel)
 
-
-            self.proj = self.coeff / self.depth
+            self.proj = self.coeff / (self.depth + 1)
+                
             self.c = 240 / (1 + self.depth * self.depth * 0.000002)
             # line = pygame.draw.line(win, (105, 100, 170), (self.plaer_x, self.plaer_y), (self.plaer_x + self.depth * self.cos_a, self.plaer_y + self.depth * self.sin_a))
             pygame.draw.rect(win, (self.c,self.c,self.c), (ray * self.scale, (settings.win_width // 2) - self.proj // 2, self.scale, self.proj))
