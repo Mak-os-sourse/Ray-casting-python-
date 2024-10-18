@@ -77,7 +77,7 @@ class Plaer():
 
             self.proj = self.coeff / (self.depth + 1)
                 
-            self.c = 240 / (1 + self.depth * self.depth * 0.000002)
+            self.color = 240 / (1 + self.depth * self.depth * 0.000002)
             # line = pygame.draw.line(win, (105, 100, 170), (self.plaer_x, self.plaer_y), (self.plaer_x + self.depth * self.cos_a, self.plaer_y + self.depth * self.sin_a))
-            pygame.draw.rect(win, (self.c,self.c,self.c), (ray * self.scale, (settings.win_width // 2) - self.proj // 2, self.scale, self.proj))
+            pygame.draw.rect(win, (self.color,self.color,self.color), (ray * self.scale, (settings.win_width // 2) - self.proj // 2, self.scale, self.proj))
             self.cur_angel -= self.distance_cur 
